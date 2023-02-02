@@ -1,0 +1,953 @@
+fileFormatVersion: 2
+guid: 8828acce434f6b3448b2f2b6208298f5
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: BeakBottom
+  - first:
+      1: 100002
+    second: BeakTop
+  - first:
+      1: 100004
+    second: But
+  - first:
+      1: 100006
+    second: But02
+  - first:
+      1: 100008
+    second: CG
+  - first:
+      1: 100010
+    second: Head
+  - first:
+      1: 100012
+    second: L Calf
+  - first:
+      1: 100014
+    second: L Clavicle
+  - first:
+      1: 100016
+    second: L Finger
+  - first:
+      1: 100018
+    second: L Foot
+  - first:
+      1: 100020
+    second: L Forearm
+  - first:
+      1: 100022
+    second: L Hand
+  - first:
+      1: 100024
+    second: L Thigh
+  - first:
+      1: 100026
+    second: L Toe0
+  - first:
+      1: 100028
+    second: L Toe01
+  - first:
+      1: 100030
+    second: L Toe1
+  - first:
+      1: 100032
+    second: L Toe11
+  - first:
+      1: 100034
+    second: L Toe2
+  - first:
+      1: 100036
+    second: L Toe21
+  - first:
+      1: 100038
+    second: L Toe3
+  - first:
+      1: 100040
+    second: L Toe31
+  - first:
+      1: 100042
+    second: L UpperArm
+  - first:
+      1: 100044
+    second: LEyeLid
+  - first:
+      1: 100046
+    second: LFeather1
+  - first:
+      1: 100048
+    second: LFeather10
+  - first:
+      1: 100050
+    second: LFeather1002
+  - first:
+      1: 100052
+    second: LFeather102
+  - first:
+      1: 100054
+    second: LFeather11
+  - first:
+      1: 100056
+    second: LFeather1102
+  - first:
+      1: 100058
+    second: LFeather12
+  - first:
+      1: 100060
+    second: LFeather1202
+  - first:
+      1: 100062
+    second: LFeather13
+  - first:
+      1: 100064
+    second: LFeather1302
+  - first:
+      1: 100066
+    second: LFeather14
+  - first:
+      1: 100068
+    second: LFeather1402
+  - first:
+      1: 100070
+    second: LFeather15
+  - first:
+      1: 100072
+    second: LFeather1502
+  - first:
+      1: 100074
+    second: LFeather16
+  - first:
+      1: 100076
+    second: LFeather1602
+  - first:
+      1: 100078
+    second: LFeather2
+  - first:
+      1: 100080
+    second: LFeather202
+  - first:
+      1: 100082
+    second: LFeather3
+  - first:
+      1: 100084
+    second: LFeather302
+  - first:
+      1: 100086
+    second: LFeather4
+  - first:
+      1: 100088
+    second: LFeather402
+  - first:
+      1: 100090
+    second: LFeather5
+  - first:
+      1: 100092
+    second: LFeather502
+  - first:
+      1: 100094
+    second: LFeather6
+  - first:
+      1: 100096
+    second: LFeather602
+  - first:
+      1: 100098
+    second: LFeather7
+  - first:
+      1: 100100
+    second: LFeather702
+  - first:
+      1: 100102
+    second: LFeather8
+  - first:
+      1: 100104
+    second: LFeather802
+  - first:
+      1: 100106
+    second: LFeather9
+  - first:
+      1: 100108
+    second: LFeather902
+  - first:
+      1: 100110
+    second: LTail01
+  - first:
+      1: 100112
+    second: LTail02
+  - first:
+      1: 100114
+    second: LTail03
+  - first:
+      1: 100116
+    second: LTail04
+  - first:
+      1: 100118
+    second: LTail05
+  - first:
+      1: 100120
+    second: Neck
+  - first:
+      1: 100122
+    second: Pelvis
+  - first:
+      1: 100124
+    second: R Calf
+  - first:
+      1: 100126
+    second: R Clavicle
+  - first:
+      1: 100128
+    second: R Finger
+  - first:
+      1: 100130
+    second: R Foot
+  - first:
+      1: 100132
+    second: R Forearm
+  - first:
+      1: 100134
+    second: R Hand
+  - first:
+      1: 100136
+    second: R Thigh
+  - first:
+      1: 100138
+    second: R Toe0
+  - first:
+      1: 100140
+    second: R Toe01
+  - first:
+      1: 100142
+    second: R Toe1
+  - first:
+      1: 100144
+    second: R Toe11
+  - first:
+      1: 100146
+    second: R Toe2
+  - first:
+      1: 100148
+    second: R Toe21
+  - first:
+      1: 100150
+    second: R Toe3
+  - first:
+      1: 100152
+    second: R Toe31
+  - first:
+      1: 100154
+    second: R UpperArm
+  - first:
+      1: 100156
+    second: Raven LOD2
+  - first:
+      1: 100158
+    second: //RootNode
+  - first:
+      1: 100160
+    second: REyeLid
+  - first:
+      1: 100162
+    second: RFeather1
+  - first:
+      1: 100164
+    second: RFeather10
+  - first:
+      1: 100166
+    second: RFeather1002
+  - first:
+      1: 100168
+    second: RFeather102
+  - first:
+      1: 100170
+    second: RFeather11
+  - first:
+      1: 100172
+    second: RFeather1102
+  - first:
+      1: 100174
+    second: RFeather12
+  - first:
+      1: 100176
+    second: RFeather1202
+  - first:
+      1: 100178
+    second: RFeather13
+  - first:
+      1: 100180
+    second: RFeather1302
+  - first:
+      1: 100182
+    second: RFeather14
+  - first:
+      1: 100184
+    second: RFeather1402
+  - first:
+      1: 100186
+    second: RFeather15
+  - first:
+      1: 100188
+    second: RFeather1502
+  - first:
+      1: 100190
+    second: RFeather16
+  - first:
+      1: 100192
+    second: RFeather1602
+  - first:
+      1: 100194
+    second: RFeather2
+  - first:
+      1: 100196
+    second: RFeather202
+  - first:
+      1: 100198
+    second: RFeather3
+  - first:
+      1: 100200
+    second: RFeather302
+  - first:
+      1: 100202
+    second: RFeather4
+  - first:
+      1: 100204
+    second: RFeather402
+  - first:
+      1: 100206
+    second: RFeather5
+  - first:
+      1: 100208
+    second: RFeather502
+  - first:
+      1: 100210
+    second: RFeather6
+  - first:
+      1: 100212
+    second: RFeather602
+  - first:
+      1: 100214
+    second: RFeather7
+  - first:
+      1: 100216
+    second: RFeather702
+  - first:
+      1: 100218
+    second: RFeather8
+  - first:
+      1: 100220
+    second: RFeather802
+  - first:
+      1: 100222
+    second: RFeather9
+  - first:
+      1: 100224
+    second: RFeather902
+  - first:
+      1: 100226
+    second: RTail01
+  - first:
+      1: 100228
+    second: RTail02
+  - first:
+      1: 100230
+    second: RTail03
+  - first:
+      1: 100232
+    second: RTail04
+  - first:
+      1: 100234
+    second: RTail05
+  - first:
+      1: 100236
+    second: Spine
+  - first:
+      1: 100238
+    second: Spine1
+  - first:
+      1: 100240
+    second: Tail Center
+  - first:
+      1: 100242
+    second: Throat
+  - first:
+      1: 100244
+    second: Tongue
+  - first:
+      1: 100246
+    second: Root
+  - first:
+      4: 400000
+    second: BeakBottom
+  - first:
+      4: 400002
+    second: BeakTop
+  - first:
+      4: 400004
+    second: But
+  - first:
+      4: 400006
+    second: But02
+  - first:
+      4: 400008
+    second: CG
+  - first:
+      4: 400010
+    second: Head
+  - first:
+      4: 400012
+    second: L Calf
+  - first:
+      4: 400014
+    second: L Clavicle
+  - first:
+      4: 400016
+    second: L Finger
+  - first:
+      4: 400018
+    second: L Foot
+  - first:
+      4: 400020
+    second: L Forearm
+  - first:
+      4: 400022
+    second: L Hand
+  - first:
+      4: 400024
+    second: L Thigh
+  - first:
+      4: 400026
+    second: L Toe0
+  - first:
+      4: 400028
+    second: L Toe01
+  - first:
+      4: 400030
+    second: L Toe1
+  - first:
+      4: 400032
+    second: L Toe11
+  - first:
+      4: 400034
+    second: L Toe2
+  - first:
+      4: 400036
+    second: L Toe21
+  - first:
+      4: 400038
+    second: L Toe3
+  - first:
+      4: 400040
+    second: L Toe31
+  - first:
+      4: 400042
+    second: L UpperArm
+  - first:
+      4: 400044
+    second: LEyeLid
+  - first:
+      4: 400046
+    second: LFeather1
+  - first:
+      4: 400048
+    second: LFeather10
+  - first:
+      4: 400050
+    second: LFeather1002
+  - first:
+      4: 400052
+    second: LFeather102
+  - first:
+      4: 400054
+    second: LFeather11
+  - first:
+      4: 400056
+    second: LFeather1102
+  - first:
+      4: 400058
+    second: LFeather12
+  - first:
+      4: 400060
+    second: LFeather1202
+  - first:
+      4: 400062
+    second: LFeather13
+  - first:
+      4: 400064
+    second: LFeather1302
+  - first:
+      4: 400066
+    second: LFeather14
+  - first:
+      4: 400068
+    second: LFeather1402
+  - first:
+      4: 400070
+    second: LFeather15
+  - first:
+      4: 400072
+    second: LFeather1502
+  - first:
+      4: 400074
+    second: LFeather16
+  - first:
+      4: 400076
+    second: LFeather1602
+  - first:
+      4: 400078
+    second: LFeather2
+  - first:
+      4: 400080
+    second: LFeather202
+  - first:
+      4: 400082
+    second: LFeather3
+  - first:
+      4: 400084
+    second: LFeather302
+  - first:
+      4: 400086
+    second: LFeather4
+  - first:
+      4: 400088
+    second: LFeather402
+  - first:
+      4: 400090
+    second: LFeather5
+  - first:
+      4: 400092
+    second: LFeather502
+  - first:
+      4: 400094
+    second: LFeather6
+  - first:
+      4: 400096
+    second: LFeather602
+  - first:
+      4: 400098
+    second: LFeather7
+  - first:
+      4: 400100
+    second: LFeather702
+  - first:
+      4: 400102
+    second: LFeather8
+  - first:
+      4: 400104
+    second: LFeather802
+  - first:
+      4: 400106
+    second: LFeather9
+  - first:
+      4: 400108
+    second: LFeather902
+  - first:
+      4: 400110
+    second: LTail01
+  - first:
+      4: 400112
+    second: LTail02
+  - first:
+      4: 400114
+    second: LTail03
+  - first:
+      4: 400116
+    second: LTail04
+  - first:
+      4: 400118
+    second: LTail05
+  - first:
+      4: 400120
+    second: Neck
+  - first:
+      4: 400122
+    second: Pelvis
+  - first:
+      4: 400124
+    second: R Calf
+  - first:
+      4: 400126
+    second: R Clavicle
+  - first:
+      4: 400128
+    second: R Finger
+  - first:
+      4: 400130
+    second: R Foot
+  - first:
+      4: 400132
+    second: R Forearm
+  - first:
+      4: 400134
+    second: R Hand
+  - first:
+      4: 400136
+    second: R Thigh
+  - first:
+      4: 400138
+    second: R Toe0
+  - first:
+      4: 400140
+    second: R Toe01
+  - first:
+      4: 400142
+    second: R Toe1
+  - first:
+      4: 400144
+    second: R Toe11
+  - first:
+      4: 400146
+    second: R Toe2
+  - first:
+      4: 400148
+    second: R Toe21
+  - first:
+      4: 400150
+    second: R Toe3
+  - first:
+      4: 400152
+    second: R Toe31
+  - first:
+      4: 400154
+    second: R UpperArm
+  - first:
+      4: 400156
+    second: Raven LOD2
+  - first:
+      4: 400158
+    second: //RootNode
+  - first:
+      4: 400160
+    second: REyeLid
+  - first:
+      4: 400162
+    second: RFeather1
+  - first:
+      4: 400164
+    second: RFeather10
+  - first:
+      4: 400166
+    second: RFeather1002
+  - first:
+      4: 400168
+    second: RFeather102
+  - first:
+      4: 400170
+    second: RFeather11
+  - first:
+      4: 400172
+    second: RFeather1102
+  - first:
+      4: 400174
+    second: RFeather12
+  - first:
+      4: 400176
+    second: RFeather1202
+  - first:
+      4: 400178
+    second: RFeather13
+  - first:
+      4: 400180
+    second: RFeather1302
+  - first:
+      4: 400182
+    second: RFeather14
+  - first:
+      4: 400184
+    second: RFeather1402
+  - first:
+      4: 400186
+    second: RFeather15
+  - first:
+      4: 400188
+    second: RFeather1502
+  - first:
+      4: 400190
+    second: RFeather16
+  - first:
+      4: 400192
+    second: RFeather1602
+  - first:
+      4: 400194
+    second: RFeather2
+  - first:
+      4: 400196
+    second: RFeather202
+  - first:
+      4: 400198
+    second: RFeather3
+  - first:
+      4: 400200
+    second: RFeather302
+  - first:
+      4: 400202
+    second: RFeather4
+  - first:
+      4: 400204
+    second: RFeather402
+  - first:
+      4: 400206
+    second: RFeather5
+  - first:
+      4: 400208
+    second: RFeather502
+  - first:
+      4: 400210
+    second: RFeather6
+  - first:
+      4: 400212
+    second: RFeather602
+  - first:
+      4: 400214
+    second: RFeather7
+  - first:
+      4: 400216
+    second: RFeather702
+  - first:
+      4: 400218
+    second: RFeather8
+  - first:
+      4: 400220
+    second: RFeather802
+  - first:
+      4: 400222
+    second: RFeather9
+  - first:
+      4: 400224
+    second: RFeather902
+  - first:
+      4: 400226
+    second: RTail01
+  - first:
+      4: 400228
+    second: RTail02
+  - first:
+      4: 400230
+    second: RTail03
+  - first:
+      4: 400232
+    second: RTail04
+  - first:
+      4: 400234
+    second: RTail05
+  - first:
+      4: 400236
+    second: Spine
+  - first:
+      4: 400238
+    second: Spine1
+  - first:
+      4: 400240
+    second: Tail Center
+  - first:
+      4: 400242
+    second: Throat
+  - first:
+      4: 400244
+    second: Tongue
+  - first:
+      4: 400246
+    second: Root
+  - first:
+      23: 2300000
+    second: Raven LOD2
+  - first:
+      33: 3300000
+    second: Raven LOD2
+  - first:
+      43: 4300000
+    second: Raven LOD2
+  - first:
+      74: 7400000
+    second: Rav_Seat
+  - first:
+      74: 7400002
+    second: Rav_Sleep
+  - first:
+      74: 7400004
+    second: Rav_Perch
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Raven LOD2
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.25
+    animationPositionError: 0.25
+    animationScaleError: 0.25
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Rav_Seat
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rav_Sleep
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 82
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rav_Perch
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 123
+      lastFrame: 182
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 3
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 1
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: CG
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f3b4ab14af509ce429aca2b5c53f3b1e,
+    type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
