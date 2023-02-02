@@ -187,6 +187,7 @@ namespace _RavenController {
 
         private void HandleFlyingMovement()
         {
+            ravenAnimatorHandler.Animator.applyRootMotion = false;
             // FLYING MOVEMENT
             moveDirection = cameraObject.forward * ravenInputHandler.verticalMovementInput;
             moveDirection += cameraObject.right * ravenInputHandler.horizontalMovementInput;
