@@ -68,7 +68,7 @@ namespace _RavenController {
         private void LateUpdate()
         {
             cameraManager.FollowTarget();
-            cameraManager.RotateCamera(ravenInputHandler.horizontalCameraInput, ravenInputHandler.verticalCameraInput);
+            cameraManager.RotateCamera(ravenInputHandler.HorizontalCameraInput, ravenInputHandler.VerticalCameraInput);
         }
 
         private void HandleJumping()
@@ -118,23 +118,12 @@ namespace _RavenController {
 
             if ( isGrounded )
             {
-
-                // HandleFlyingRotation();
-                // HandleFlyingMovement();
-                // if ( ravenAnimatorHandler.Animator.GetInteger("State") != 6 )
-                //     ravenAnimatorHandler.Animator.SetInteger("State", 1);
-                // if ( isSprinting )
-                //     rigidbody.AddForce(transform.forward * ravenInputHandler.verticalMovementInput * 30);
-                // else
-                //     rigidbody.AddForce(transform.forward * ravenInputHandler.verticalMovementInput * 15);
-
-                // rigidbody.AddForce(transform.up * ravenInputHandler.verticalMovementInput );
-                // TODO: Rotate Regarding to the ground ! 
-
+                rigidbody.AddForce(transform.forward* ravenInputHandler.VerticalMovementInput * (isSprinting ? 20 : 10));
+                rigidbody.AddForce(transform.up* ravenInputHandler.VerticalMovementInput);
                 ravenAnimatorHandler.HandleAnimatorValues(
-                    ravenInputHandler.horizontalMovementInput,
-                    ravenInputHandler.verticalMovementInput,
-                    ravenInputHandler.upDownInput,
+                    ravenInputHandler.HorizontalMovementInput,
+                    ravenInputHandler.VerticalMovementInput,
+                    ravenInputHandler.UpDownInput,
                     ravenInputHandler.sprintFlag
                 );
             }
@@ -153,11 +142,13 @@ namespace _RavenController {
                 {
                     // flying state
                     rigidbody.useGravity = false;
+                    ravenAnimatorHandler.Animator.applyRootMotion = false; // todo find a better way to do this (!)
+
 
                     ravenAnimatorHandler.HandleAnimatorValues(
-                        ravenInputHandler.horizontalMovementInput,
-                        ravenInputHandler.verticalMovementInput,
-                        ravenInputHandler.upDownInput,
+                        ravenInputHandler.HorizontalMovementInput,
+                        ravenInputHandler.VerticalMovementInput,
+                        ravenInputHandler.UpDownInput,
                         ravenInputHandler.sprintFlag
                     );
                     HandleFlyingRotation();
@@ -170,8 +161,8 @@ namespace _RavenController {
         private void HandleFlyingRotation()
         {
             Vector3 targetDir = Vector3.zero;
-            targetDir = cameraObject.forward * Math.Abs(ravenInputHandler.verticalMovementInput); // For not rotating weird back! just for flying
-            targetDir += cameraObject.right * ravenInputHandler.horizontalMovementInput;
+            targetDir = cameraObject.forward * Math.Abs(ravenInputHandler.VerticalMovementInput); // For not rotating weird back! just for flying
+            targetDir += cameraObject.right * ravenInputHandler.HorizontalMovementInput;
             targetDir.Normalize();
             targetDir.y = 0;
 
@@ -187,17 +178,17 @@ namespace _RavenController {
 
         private void HandleFlyingMovement()
         {
-            ravenAnimatorHandler.Animator.applyRootMotion = false;
+            // ravenAnimatorHandler.Animator.applyRootMotion = false;
             // FLYING MOVEMENT
-            moveDirection = cameraObject.forward * ravenInputHandler.verticalMovementInput;
-            moveDirection += cameraObject.right * ravenInputHandler.horizontalMovementInput;
+            moveDirection = cameraObject.forward * ravenInputHandler.VerticalMovementInput;
+            moveDirection += cameraObject.right * ravenInputHandler.HorizontalMovementInput;
             // moveDirection += cameraObject.up * ravenInputHandler.upDownInput * 10f;
             moveDirection.y = 0;
             moveDirection.Normalize();
 
             float speed = movementSpeed;
 
-            if ( ravenInputHandler.sprintFlag && ravenInputHandler.moveAmount > 0.75f )
+            if ( ravenInputHandler.sprintFlag && ravenInputHandler.MoveAmount > 0.75f )
             {
                 speed = sprintSpeed;
                 isSprinting = true;
@@ -214,7 +205,7 @@ namespace _RavenController {
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = Vector3.Lerp(rigidbody.velocity, projectedVelocity, .2f / Time.deltaTime); // TODO: Lerp or not lerp? 
             // rigidbody.AddForce(projectedVelocity*10);
-            Vector3 upDownForce = Vector3.up * ravenInputHandler.upDownInput * 25f;
+            Vector3 upDownForce = Vector3.up * ravenInputHandler.UpDownInput * 25f;
             rigidbody.AddForce(upDownForce);
         }
 

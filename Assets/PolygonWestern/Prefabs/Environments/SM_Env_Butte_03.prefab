@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4496925826625162}
   - component: {fileID: 33692749269595136}
   - component: {fileID: 23559831303609494}
-  - component: {fileID: 64201277776156128}
+  - component: {fileID: 64377976495184596}
   m_Layer: 0
   m_Name: SM_Env_Butte_03
   m_TagString: Untagged
@@ -51,7 +51,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -67,7 +66,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -83,7 +81,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067873033027240}
   m_Mesh: {fileID: 4300000, guid: 786d8761855e34344a66512c0f4dfd88, type: 3}
---- !u!64 &64201277776156128
+--- !u!64 &64377976495184596
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,8 +90,8 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 786d8761855e34344a66512c0f4dfd88, type: 3}
+  m_Mesh: {fileID: 43934998459127428, guid: 00464368da6070147ac284cc7b7ca60d, type: 2}

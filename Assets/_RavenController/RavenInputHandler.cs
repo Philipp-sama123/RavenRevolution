@@ -4,12 +4,12 @@ namespace _RavenController {
     public class RavenInputHandler : MonoBehaviour
     {
    private PlayerControls playerControls;
-    public float horizontalMovementInput { get; private set; }
-    public float verticalMovementInput { get; private set; }
-    public float horizontalCameraInput { get; private set; }
-    public float verticalCameraInput { get; private set; }
-    public float upDownInput { get; private set; }
-    public float moveAmount { get; private set; }
+    public float HorizontalMovementInput { get; private set; }
+    public float VerticalMovementInput { get; private set; }
+    public float HorizontalCameraInput { get; private set; }
+    public float VerticalCameraInput { get; private set; }
+    public float UpDownInput { get; private set; }
+    public float MoveAmount { get; private set; }
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -55,20 +55,20 @@ namespace _RavenController {
 
     private void HandleMovementInput()
     {
-        horizontalMovementInput = movementInput.x;
-        verticalMovementInput = movementInput.y;
-        moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalMovementInput) + Mathf.Abs(verticalMovementInput));
+        HorizontalMovementInput = movementInput.x;
+        VerticalMovementInput = movementInput.y;
+        MoveAmount = Mathf.Clamp01(Mathf.Abs(HorizontalMovementInput) + Mathf.Abs(VerticalMovementInput));
     }
 
     private void HandleCameraInput()
     {
-        horizontalCameraInput = cameraInput.x;
-        verticalCameraInput = cameraInput.y;
+        HorizontalCameraInput = cameraInput.x;
+        VerticalCameraInput = cameraInput.y;
     }
 
     private void HandleAirControlInput()
     {
-        upDownInput = airControlInput.y;
+        UpDownInput = airControlInput.y;
     }
     }
 }

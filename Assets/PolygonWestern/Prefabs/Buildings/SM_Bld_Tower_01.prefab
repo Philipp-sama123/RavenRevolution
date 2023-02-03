@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33875895279784706}
   - component: {fileID: 23312793599043540}
   - component: {fileID: 64791645773069198}
-  - component: {fileID: 65802525962305092}
   m_Layer: 0
   m_Name: SM_Bld_Tower_01
   m_TagString: Untagged
@@ -52,7 +51,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -68,7 +66,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -93,20 +90,8 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 492436408a093bd46a7270dabc81fe23, type: 3}
---- !u!65 &65802525962305092
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1877916469214386}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.427515, y: 3.210894, z: 2.3884177}
-  m_Center: {x: 0.0016546249, y: 1.605447, z: 0.011492014}
