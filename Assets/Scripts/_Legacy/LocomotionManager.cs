@@ -111,8 +111,14 @@ public class LocomotionManager : MonoBehaviour {
         Vector3 targetDir = Vector3.zero;
         targetDir = cameraObject.forward * inputManager.verticalMovementInput;
         targetDir += cameraObject.right * inputManager.horizontalMovementInput;
+        if ( inputManager.upDownInput != 0 && inputManager.moveAmount > 0 )
+            targetDir.y = inputManager.upDownInput / 2;
+        else
+        {
+            targetDir.y = 0;
+        }
+
         targetDir.Normalize();
-        targetDir.y = 0;
 
         if ( targetDir == Vector3.zero )
             targetDir = myTransform.forward;

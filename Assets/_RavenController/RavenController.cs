@@ -8,13 +8,11 @@ namespace _RavenController {
         private RavenAnimatorHandler ravenAnimatorHandler;
 
         public new Rigidbody rigidbody;
-        public Transform cameraObject;
         [Header("Movement Stats")][SerializeField]
         private float movementSpeed = 2.5f;
         private Vector3 moveDirection;
 
-        [SerializeField] private float sprintSpeed = 1.5f;
-        [SerializeField] private float walkingSpeed = 1f;
+        [SerializeField] private float sprintSpeed = 5f;
         [SerializeField] private float rotationSpeed = 2.5f;
 
         [Header("Ground and Air Detection Stats")][SerializeField]
@@ -23,6 +21,7 @@ namespace _RavenController {
         [SerializeField] private float minimumDistanceNeededToBeginFall = .25f;
         [SerializeField] private float groundDirectionRayDistance = 0.1f;
         [SerializeField] private LayerMask groundLayer;
+        [SerializeField] private float fallingForce = 10f;
 
         private float inAirTimer;
 
@@ -37,6 +36,7 @@ namespace _RavenController {
         private static readonly int State = Animator.StringToHash("State");
         private static readonly int LastState = Animator.StringToHash("LastState");
         private static readonly int Grounded = Animator.StringToHash("Grounded");
+        public bool isUsingRootMotion = true;
         public int ActiveState { get; private set; }
         public int ActiveLastState { get; private set; }
 
@@ -54,6 +54,7 @@ namespace _RavenController {
             ActiveState = ravenAnimatorHandler.Animator.GetInteger(State);
             ActiveLastState = ravenAnimatorHandler.Animator.GetInteger(LastState);
             ActiveLastState = ravenAnimatorHandler.Animator.GetInteger(LastState);
+
             ravenAnimatorHandler.Animator.SetBool(Grounded, isGrounded);
         }
 
@@ -87,27 +88,12 @@ namespace _RavenController {
             if ( ravenInputHandler.takeOffInput )
             {
                 ravenInputHandler.takeOffInput = false;
-                if ( ravenAnimatorHandler.Animator.GetInteger(State) != ravenAnimatorHandler.Fly )
-                {
-                    ravenAnimatorHandler.Animator.SetInteger(LastState, ravenAnimatorHandler.Locomotion);
-                    ravenAnimatorHandler.Animator.SetInteger(State, ravenAnimatorHandler.Fly);
-                }
-                else
-                {
-                    if ( !isGrounded )
-                    {
-                        ravenAnimatorHandler.Animator.SetInteger(State, ravenAnimatorHandler.Fall);
-                        ravenAnimatorHandler.Animator.SetInteger(LastState, ravenAnimatorHandler.Fall);
 
-                    }
-                    else
-                    {
-                        ravenAnimatorHandler.Animator.SetInteger(State, ravenAnimatorHandler.Locomotion);
+                if ( !isGrounded )
+                    return;
 
-                    }
-
-                }
-
+                ravenAnimatorHandler.Animator.SetInteger(LastState, ravenAnimatorHandler.Locomotion);
+                ravenAnimatorHandler.Animator.SetInteger(State, ravenAnimatorHandler.Fly);
             }
         }
 
@@ -118,8 +104,6 @@ namespace _RavenController {
 
             if ( isGrounded )
             {
-                rigidbody.AddForce(transform.forward* ravenInputHandler.VerticalMovementInput * (isSprinting ? 20 : 10));
-                rigidbody.AddForce(transform.up* ravenInputHandler.VerticalMovementInput);
                 ravenAnimatorHandler.HandleAnimatorValues(
                     ravenInputHandler.HorizontalMovementInput,
                     ravenInputHandler.VerticalMovementInput,
@@ -132,8 +116,7 @@ namespace _RavenController {
                 // not flying -- > so falling
                 if ( ravenAnimatorHandler.Animator.GetInteger(State) != ravenAnimatorHandler.Fly )
                 {
-                    rigidbody.useGravity = true;
-                    ravenAnimatorHandler.Animator.applyRootMotion = true;
+                    isUsingRootMotion = true;
 
                     ravenAnimatorHandler.Animator.SetInteger(State, ravenAnimatorHandler.Fall);
                     ravenAnimatorHandler.Animator.SetInteger(LastState, ravenAnimatorHandler.Fall);
@@ -141,8 +124,7 @@ namespace _RavenController {
                 else
                 {
                     // flying state
-                    rigidbody.useGravity = false;
-                    ravenAnimatorHandler.Animator.applyRootMotion = false; // todo find a better way to do this (!)
+                   // isUsingRootMotion = false; // todo find a better way to do this (!)
 
 
                     ravenAnimatorHandler.HandleAnimatorValues(
@@ -161,29 +143,29 @@ namespace _RavenController {
         private void HandleFlyingRotation()
         {
             Vector3 targetDir = Vector3.zero;
-            targetDir = cameraObject.forward * Math.Abs(ravenInputHandler.VerticalMovementInput); // For not rotating weird back! just for flying
-            targetDir += cameraObject.right * ravenInputHandler.HorizontalMovementInput;
+            targetDir = rigidbody.transform.forward * Math.Abs(ravenInputHandler.VerticalMovementInput); // For not rotating weird back! just for flying
+            targetDir += rigidbody.transform.right * ravenInputHandler.HorizontalMovementInput;
+
+            if ( isGrounded || ravenInputHandler.UpDownInput == 0 || ravenInputHandler.VerticalMovementInput == 0 )
+                targetDir.y = 0;
+            else
+                targetDir.y = ravenInputHandler.UpDownInput / 2;
+
             targetDir.Normalize();
-            targetDir.y = 0;
 
             if ( targetDir == Vector3.zero )
-                targetDir = transform.forward;
+                targetDir = rigidbody.transform.forward;
 
             float rs = rotationSpeed;
             Quaternion tr = Quaternion.LookRotation(targetDir);
             Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rs * Time.deltaTime);
-
             rigidbody.rotation = targetRotation;
         }
 
         private void HandleFlyingMovement()
         {
-            // ravenAnimatorHandler.Animator.applyRootMotion = false;
-            // FLYING MOVEMENT
-            moveDirection = cameraObject.forward * ravenInputHandler.VerticalMovementInput;
-            moveDirection += cameraObject.right * ravenInputHandler.HorizontalMovementInput;
-            // moveDirection += cameraObject.up * ravenInputHandler.upDownInput * 10f;
-            moveDirection.y = 0;
+            moveDirection = rigidbody.transform.forward * ravenInputHandler.VerticalMovementInput;
+            moveDirection += rigidbody.transform.right * ravenInputHandler.HorizontalMovementInput;
             moveDirection.Normalize();
 
             float speed = movementSpeed;
@@ -198,15 +180,13 @@ namespace _RavenController {
             {
                 moveDirection *= speed;
             }
-            Debug.Log("VELOCITY: before - " + rigidbody.velocity);
 
-            // moveDirection *= 2; // --> Flying multiplicator
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = Vector3.Lerp(rigidbody.velocity, projectedVelocity, .2f / Time.deltaTime); // TODO: Lerp or not lerp? 
             // rigidbody.AddForce(projectedVelocity*10);
-            Vector3 upDownForce = Vector3.up * ravenInputHandler.UpDownInput * 25f;
-            rigidbody.AddForce(upDownForce);
+            Vector3 upDownForce = rigidbody.transform.up * ravenInputHandler.UpDownInput;
+            rigidbody.AddForce(upDownForce * 100, ForceMode.Acceleration);
         }
 
         private void GroundCheck()
@@ -244,6 +224,7 @@ namespace _RavenController {
                 }
                 else
                 {
+                    rigidbody.AddForce(-transform.up * 9.81f * fallingForce);
                     Debug.Log("[Info] Not Grounded" + targetPosition);
                 }
             }
