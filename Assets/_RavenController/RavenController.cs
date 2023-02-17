@@ -4,7 +4,6 @@ using UnityEngine;
 namespace _RavenController {
     public class RavenController : MonoBehaviour {
         private RavenInputHandler ravenInputHandler;
-        private LocomotionManager locomotionManagerManager;
         private RavenAnimatorHandler ravenAnimatorHandler;
 
         public new Rigidbody rigidbody;
@@ -54,7 +53,7 @@ namespace _RavenController {
             ActiveState = ravenAnimatorHandler.Animator.GetInteger(State);
             ActiveLastState = ravenAnimatorHandler.Animator.GetInteger(LastState);
             ActiveLastState = ravenAnimatorHandler.Animator.GetInteger(LastState);
-
+            HandleAttack();
             ravenAnimatorHandler.Animator.SetBool(Grounded, isGrounded);
         }
 
@@ -70,6 +69,18 @@ namespace _RavenController {
         {
             cameraManager.FollowTarget();
             cameraManager.RotateCamera(ravenInputHandler.HorizontalCameraInput, ravenInputHandler.VerticalCameraInput);
+        }
+
+        private void HandleAttack()
+        {
+            if ( ravenInputHandler.lightAttackInput )
+            {
+                ravenAnimatorHandler.Animator.CrossFade("Attack Beak 1", .2f);
+            }
+            if ( ravenInputHandler.heavyAttackInput )
+            {
+                ravenAnimatorHandler.Animator.CrossFade("Attack Beak 2", .2f); //Attack Claws
+            }
         }
 
         private void HandleJumping()
@@ -124,7 +135,7 @@ namespace _RavenController {
                 else
                 {
                     // flying state
-                   // isUsingRootMotion = false; // todo find a better way to do this (!)
+                    // isUsingRootMotion = false; // todo find a better way to do this (!)
 
 
                     ravenAnimatorHandler.HandleAnimatorValues(
@@ -204,7 +215,7 @@ namespace _RavenController {
                 dir.Normalize();
                 origin = origin + dir * groundDirectionRayDistance;
 
-                targetPosition = transform.position;
+                targetPosition = rigidbody.transform.position;
 
                 Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red);
                 if ( Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, groundLayer) )
@@ -219,7 +230,7 @@ namespace _RavenController {
 
                     Debug.Log("[Info] Grounded" + targetPosition);
 
-                    // transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime / .2f);
+                    rigidbody.transform.position = Vector3.Lerp(rigidbody.transform.position, targetPosition, Time.deltaTime / .2f);
 
                 }
                 else

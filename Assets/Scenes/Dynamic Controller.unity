@@ -87954,14 +87954,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6946448891128811752, guid: 4d9b99ddbe437496e89c48d4a5284728, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946448891128811753, guid: 4d9b99ddbe437496e89c48d4a5284728, type: 3}
-      propertyPath: velocityMultiplicator
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6946448891128811759, guid: 4d9b99ddbe437496e89c48d4a5284728, type: 3}
       propertyPath: m_Name
       value: Raven
